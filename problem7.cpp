@@ -22,10 +22,14 @@ void holdsShinyGoldBag(map<string, map<string, int>> &bagMap, string &bag, int &
     for (cursor = bagContents.begin(); cursor != bagContents.end(); ++cursor)
     {
         string nextBag = cursor->first;
-        cout << "Next Bag: " << nextBag << endl;
-        return holdsShinyGoldBag(bagMap, nextBag, indicator);
+        if (nextBag == "shiny gold")
+        {
+            continue;
+        }
+        //cout << "Next Bag: " << nextBag << endl;
+        holdsShinyGoldBag(bagMap, nextBag, indicator);
     }
-    cout << "Terminating chain with " << bag << endl;
+    //cout << "Terminating chain with " << bag << endl;
 }
 
 int main()
@@ -69,7 +73,7 @@ int main()
     {
         string thisBag = cursor->first;
         int indicator = 0;
-        cout << "Going in first level with " << thisBag << endl;
+        //cout << "Going in first level with " << thisBag << endl;
         holdsShinyGoldBag(bagMap, thisBag, indicator);
         if (indicator == 1)
         {
