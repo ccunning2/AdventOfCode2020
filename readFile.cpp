@@ -40,3 +40,22 @@ vector<int> intVectorFromFile(string fileName)
 
     return newVec;
 }
+
+vector<long long int> lliVectorFromFile(string fileName)
+{
+    vector<long long int> newVec;
+    string line;
+    ifstream myfile(fileName);
+    if (myfile.is_open())
+    {
+        while (getline(myfile, line))
+        {
+            newVec.push_back(stoll(line));
+        }
+        myfile.close();
+    }
+    else
+        cout << "Unable to open file";
+
+    return newVec;
+}

@@ -8,5 +8,6 @@
 
 std::vector<std::string> stringVectorFromFile(std::string fileName);
 std::vector<int> intVectorFromFile(std::string fileName);
+std::vector<long long int> lliVectorFromFile(std::string fileName);
 
 #endif
