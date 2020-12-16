@@ -6,6 +6,7 @@
 
 # Unignore all dirs
 !*/
+/Ignored
 
 ### Above combination will ignore all files without extension ###
 
